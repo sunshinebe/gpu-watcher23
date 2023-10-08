@@ -7,7 +7,7 @@ import yaml
 import pynvml
 
 with open(os.path.join(os.path.split(__file__)[0], 'config.yaml')) as f:
-    config = yaml.load(f)
+    config = yaml.safe_load(f)
 
 pynvml.nvmlInit()
 host = config['local']['host']
